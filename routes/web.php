@@ -9,9 +9,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
 
 // Rutas públicas
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/catalogo', [CatalogController::class, 'index'])->name('catalog.index');
 Route::get('/categoria/{category:slug}', [CatalogController::class, 'category'])->name('catalog.category');
 Route::get('/producto/{product:slug}', [CatalogController::class, 'show'])->name('product.show');
