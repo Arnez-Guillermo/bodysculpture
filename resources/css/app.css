@@ -1,0 +1,12 @@
+/* Importar Bootstrap 5 */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Estilos personalizados */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
