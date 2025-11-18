@@ -68,7 +68,7 @@ class User extends Authenticatable
             'model_has_roles',
             'model_id',
             'role_id'
-        )->where('model_has_roles.model_type', self::class);
+        );
     }
 
     public function hasRole(string $role): bool
@@ -80,9 +80,7 @@ class User extends Authenticatable
     {
         $roleModel = Role::firstOrCreate(['name' => $role]);
         if (!$this->hasRole($role)) {
-            $this->roles()->attach($roleModel->id, [
-                'model_type' => self::class
-            ]);
+            $this->roles()->attach($roleModel->id);
         }
     }
 }

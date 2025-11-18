@@ -48,14 +48,14 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
-            'description' => 'nullable|string',
-            'parent_id' => 'nullable|exists:categories,id',
-            'is_active' => 'boolean',
+            'nombre' => 'required|string|max:255|unique:categorias,nombre,' . $category->id,
+            'descripcion' => 'nullable|string',
+            'categoria_padre_id' => 'nullable|exists:categorias,id',
+            'activa' => 'boolean',
         ]);
 
-        $validated['slug'] = Str::slug($validated['name']);
-        $validated['is_active'] = $request->has('is_active');
+        $validated['slug'] = Str::slug($validated['nombre']);
+        $validated['activa'] = $request->has('activa');
 
         $category->update($validated);
 

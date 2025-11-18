@@ -10,9 +10,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
-            $table->string('slug')->unique()->index();
-            $table->string('sku')->unique()->index();
+            $table->string('name', 191)->index();
+            $table->string('slug', 191)->unique()->index();
+            $table->string('sku', 191)->unique()->index();
             $table->text('description');
             $table->text('short_description')->nullable();
             $table->decimal('price', 10, 2)->index();

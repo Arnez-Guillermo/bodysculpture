@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('model_has_roles', function (Blueprint $table) {
             $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
-            $table->string('model_type');
+            $table->string('model_type', 191);
             $table->unsignedBigInteger('model_id');
             
             $table->primary(['role_id', 'model_id', 'model_type'], 'model_has_roles_role_model_type_primary');
