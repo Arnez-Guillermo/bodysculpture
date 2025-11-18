@@ -7,6 +7,9 @@
 
     <title>@yield('title', 'BodySculpture - Artículos Fitness')</title>
 
+    <!-- Desactivar favicon -->
+    <link rel="icon" href="data:,">
+
     <!-- Vite CSS & JS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
